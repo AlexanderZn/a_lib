@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Вход | Alpha-lib</title>
+</head>
+<body>
+    <div class="modal-dialog text-center">
+        <div class="col-sm-12 main-section bg-dark">
+            <div class="modal-content">
+                <div class="col-12 alpha-logo">
+                    <img src="{% static 'img/logo.png' %}" alt="logo">
+                </div>
+
+                <form action="/log_in/" class="col-12" role="form" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <i class="fa fa-user fa-2x cuts" aria-hidden="true"></i>
+                        <input name="email" type="text" class="form-control input-img" placeholder="Введите email" required="required">
+                    </div>
+
+                    <div class="form-group">
+                        <i class="fa fa-lock fa-2x cuts" aria-hidden="true"></i>
+                        <input name="password" type="password" class="form-control input-img" placeholder="Введите пароль" required="required">
+                    </div>
+
+                    <div class="form-check check-me">
+                        <input type="checkbox" class="form-check-input">
+                        <label class="form-check-label">Запомнить меня</label>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-success col-sm-12 col-md-12 col-lg-8" type="submit"><i class="fas fa-sign-in-alt"></i> Войти</button>
+                    </div>
+                </form>
+
+                <div class="form-group">
+                    <a href="/accounts/registration/">Нет аккаунта? Регистрация</a>
+                </div>
+                <div class="form-group">
+                    <a href="/guest/">Войти как гость</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</body>
+</html>

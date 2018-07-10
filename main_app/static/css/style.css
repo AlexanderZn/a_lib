@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* Настройка тела страницы: шрифт Roboto */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Настройка отступов для формы логина и регистраци */
+.main-section {
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 0px;
+}
+
+/* Настройка отступов для формы поиска*/
+.main-section-search {
+    margin: 0 auto;
+    padding: 0px;
+}
+
+
+/* Отображения фона формы, отступов и тени */
+.modal-content {
+    background-color: #3b4652;
+    opacity: .95;
+    padding: 0 18px;
+    box-shadow: 0px 0px 3px #848484;
+}
+
+/* Отображение иконок в полях ввода */
+.cuts {
+    position: absolute;
+    margin-top: 8px;
+    font-size: 22px;
+    left: 25px;
+}
+
+/* Отступ по левому краю в полях ввода */
+.input-img {
+    padding-left: 40px;
+}
+
+/* Отступы для изображения */
+.alpha-logo {
+    margin-top: -50px;
+    margin-bottom: 35px;
+    
+}
+
+/* Размер изображения 100px, скругленные углы и тень */
+.alpha-logo img {
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px #848484;
+}
+
+/* Отступы полей ввода */
+.form-group, .form-check {
+    margin-bottom: 25px;
+}
+
+/* Выравнивание по правому краю и цвет текста для чекбокса */
+.check-me {
+    color: #fff;
+    text-align: left;
+}
+
+/* Высота полей ввода, скругленные углы, размер шрифты и границ */
+.form-group input {
+    height: 42px;
+    border-radius: 5px;
+    font-size: 18px;
+    border: 0;
+}
+
+/* Высота полей выбора, скругленные углы, размер шрифты и границ */
+.form-group select {
+    height: 42px;
+    border-radius: 5px;
+    font-size: 18px;
+    border: 0;
+}
+
+/* Размер шрифта и настройка картинки кнопки*/
+.svg-inline--fa {
+    font-size: 20px;
+    margin-right: 7px;
+}
+
+/* Статичный цвет для всех состояний ссылки */
+a, a:hover, a:visited {
+    color: #fff;
+}

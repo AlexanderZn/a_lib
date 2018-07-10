@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Главная | Alpha-lib</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/" style="color: #fff;">Библиотека</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+              
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav ml-auto">
+                    {% if request.user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user_books/" style="color: #fff;">{{ request.user.first_name }}</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/" style="color: #fff;">Вход</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accounts/registration/" style="color: #fff;">Регистрация</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form action="#" class="row border-bottom border-danger" style="margin-top: 25px;" role="form">
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" style="border: 1px solid black" placeholder="Название книги..">
+            </div>
+
+            <div class="form-group col-md-4">
+                <select class="custom-select" style="border: 1px solid black">
+                    <option disabled selected>Категории..</option>
+                    <option>Все категории</option>
+                    <option>IT</option>
+                    <option>Managment</option>
+                </select>
+            </div>
+    
+            <div class="form-group col-md-4">
+                <button class="btn btn-success col-sm-12 col-md-12 col-lg-12" type="submit">Поиск</button>
+            </div>
+        </form>
+
+        <div class="card-deck" style="margin-top: 25px;">
+            {% for book in books %}
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">{{ book.title }}</h3>
+                        <h5 class="card-text mb-2 text-muted">{{ book.author }}</h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-text text-muted">Описание</h5>
+                        <p class="card-text">{{ book.description }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/book_detailed/{{ book.id }}" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            {% endfor %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</body>
+</html>
