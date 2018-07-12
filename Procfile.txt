@@ -1,1 +1,1 @@
-web: gunicorn a_lib/a_lib.wsgi --log-file -
+web: python manage.py
